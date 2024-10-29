@@ -1,38 +1,121 @@
 .App {
-  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+  width: 100vw;
+  background-color: #7e60bf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Container {
+  width: 30%;
+  height: 50%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  border: 3px solid #e4b1f0;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2),
+    /* Outer shadow */ inset 0 0 20px rgba(255, 255, 255, 0.6); /* Inner light effect */
+  transform: perspective(500px) translateZ(30px); /* Protruding effect using translateZ */
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Container:hover {
+  transform: perspective(500px) translateZ(60px); /* Pop out more on hover */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3),
+    /* Increased outer shadow on hover */ inset 0 0 30px
+      rgba(255, 255, 255, 0.7); /* Stronger inner light effect on hover */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ulList {
+  overflow-x: auto;
+  width: 90%;
+  height: 60%;
+}
+
+.liList {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+.liList input {
+  border: none;
+  border-radius: 25px;
+  background-color: #e4b1f0;
+}
+
+.liList li {
+  width: 50%;
+  font-size: 25px;
+  list-style-type: "💜";
+  overflow-wrap: break-word;
+  color: #e4b1f0;
+  cursor: pointer;
+}
+
+.btns {
+  width: 50%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 5px;
+}
+
+.btns span {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.Controller {
+  width: 90%;
+  height: 20%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 7px;
 }
 
-.App-link {
-  color: #61dafb;
+.Controller input {
+  font-size: 20px;
+  border: none;
+  background-color: #7e60bf;
+  border-bottom: 1px solid #e4b1f0;
+  color: #e4b1f0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Controller button {
+  font-size: 20px;
+  border: none;
+  border-radius: 25px;
+  background-color: #e4b1f0;
+}
+
+.uli {
+  padding: 0;
+}
+
+@media (max-width: 950px) {
+  .Container {
+    width: 80%;
+    height: 70%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .liList li {
+    font-size: 25px;
+  }
+
+  .Controller input {
+    font-size: 25px;
+  }
+
+  .Controller button {
+    font-size: 25px;
+  }
+
+  .btns span {
+    font-size: 20px;
   }
 }

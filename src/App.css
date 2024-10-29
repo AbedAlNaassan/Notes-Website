@@ -51,10 +51,15 @@
 .liList li {
   width: 50%;
   font-size: 25px;
-  list-style-type: "💜";
+  list-style-type: none;
   overflow-wrap: break-word;
   color: #e4b1f0;
   cursor: pointer;
+}
+
+.liList li::before {
+  content: "💜";
+  margin-right: 8px; /* Adjust spacing if needed */
 }
 
 .btns {
@@ -91,10 +96,6 @@
   border: none;
   border-radius: 25px;
   background-color: #e4b1f0;
-}
-
-.uli {
-  padding: 0;
 }
 
 @media (max-width: 950px) {

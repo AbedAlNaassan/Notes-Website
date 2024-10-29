@@ -54,7 +54,7 @@ function App() {
       <div className="Container">
         <h1 style={{ fontSize: "50px", color: "#E4B1F0" }}>Todo-List</h1>
         <div className="ulList">
-          <ul className="uli">
+          <ul style={{ padding: 0 }}>
             {list.map(({ text, completed, isEditing }, index) => {
               return (
                 <div className="liList" key={index}>
